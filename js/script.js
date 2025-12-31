@@ -1,6 +1,7 @@
-/* ================= FIREWORKS ================= */
+/* ================= SCRIPT LOADED ================= */
 console.log("SCRIPT JS LOADED");
 
+/* ================= FIREWORKS ================= */
 
 const fwCanvas = document.getElementById("fireworks");
 
@@ -84,13 +85,13 @@ if (fwCanvas) {
   animate();
 }
 
-/* ================= COUNTDOWN ================= */
+/* ================= COUNTDOWN (OTHER PAGES SAFE) ================= */
 
 const newYear = new Date("January 1, 2026 00:00:00").getTime();
 
 setInterval(() => {
   const daysEl = document.getElementById("days");
-  if (!daysEl) return; // surprise page safe
+  if (!daysEl) return;
 
   const now = new Date().getTime();
   const diff = newYear - now;
@@ -104,77 +105,54 @@ setInterval(() => {
   document.getElementById("seconds").innerText =
     Math.floor((diff / 1000) % 60);
 }, 1000);
-/* ===== FINAL I LOVE YOU REVEAL AT 12 ===== */
+
+/* ================= FINAL MIDNIGHT SURPRISE ================= */
+
 const loveText = document.getElementById("finalLove");
-
-function checkMidnight() {
-  const now = new Date();
-  if (
-    now.getHours() === 0 &&
-    now.getMinutes() === 0 &&
-    now.getSeconds() <= 5
-  
-  
-  ) {
-  if (loveText) {
-    loveText.classList.add("love-show");
-  }
-
-  showTeddyKiss();        // 🧸 YAHI ADD KARO
-
-  triggerNotification();
-}
-}
-
-setInterval(checkMidnight, 1000);
-// 🧸 Teddy kiss trigger
 const teddyWrap = document.querySelector(".teddy-wrap");
 
 function showTeddyKiss() {
+  console.log("🐻 Teddy Kiss Triggered");
   if (teddyWrap) {
     teddyWrap.classList.add("teddy-show");
   }
 }
 
-
-/* ===== NOTIFICATION PERMISSION ===== */
 function triggerNotification() {
   if (!("Notification" in window)) return;
 
   if (Notification.permission === "granted") {
     new Notification("❤️ Happy New Year ❤️", {
-      body: "I Love You. Always. ♾️",
+      body: "I Love You Akriti. Always. ♾️",
       icon: "assets/images/pic1.jpg"
     });
   }
 }
+
+function checkMidnight() {
+  const now = new Date();
+
+  if (
+    now.getHours() === 0 &&
+    now.getMinutes() === 0 &&
+    now.getSeconds() <= 5
+  ) {
+    if (loveText) loveText.classList.add("love-show");
+    showTeddyKiss();
+    triggerNotification();
+  }
+}
+
+setInterval(checkMidnight, 1000);
+
+/* ================= NOTIFICATION PERMISSION ================= */
 
 document.addEventListener("click", () => {
   if ("Notification" in window && Notification.permission !== "granted") {
     Notification.requestPermission();
   }
 });
-// 🔥 TEMP TEST BUTTON
-const testBtn = document.getElementById("testBtn");
 
-if (testBtn) {
-  testBtn.addEventListener("click", () => {
-    if (loveText) loveText.classList.add("love-show");
-    showTeddyKiss();
-    triggerNotification();
-  });
-}
-// 🧸 Teddy kiss trigger (FINAL)
-const teddyWrap = document.querySelector(".teddy-wrap");
-
-function showTeddyKiss() {
-  console.log("Teddy function called");
-  if (teddyWrap) {
-    teddyWrap.classList.add("teddy-show");
-  } else {
-    console.log("❌ teddy-wrap not found in HTML");
-  }
-}
 
 
 
