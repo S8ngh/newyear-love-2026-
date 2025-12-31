@@ -164,6 +164,18 @@ if (testBtn) {
     triggerNotification();
   });
 }
+// 🧸 Teddy kiss trigger (FINAL)
+const teddyWrap = document.querySelector(".teddy-wrap");
+
+function showTeddyKiss() {
+  console.log("Teddy function called");
+  if (teddyWrap) {
+    teddyWrap.classList.add("teddy-show");
+  } else {
+    console.log("❌ teddy-wrap not found in HTML");
+  }
+}
+
 
 
 
