@@ -125,6 +125,15 @@ function checkMidnight() {
 }
 
 setInterval(checkMidnight, 1000);
+// 🧸 Teddy kiss trigger
+const teddyWrap = document.querySelector(".teddy-wrap");
+
+function showTeddyKiss() {
+  if (teddyWrap) {
+    teddyWrap.classList.add("teddy-show");
+  }
+}
+
 
 /* ===== NOTIFICATION PERMISSION ===== */
 function triggerNotification() {
@@ -143,5 +152,6 @@ document.addEventListener("click", () => {
     Notification.requestPermission();
   }
 });
+
 
 
