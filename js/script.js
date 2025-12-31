@@ -1,4 +1,5 @@
 /* ================= FIREWORKS ================= */
+console.log("SCRIPT LOADED");
 
 const fwCanvas = document.getElementById("fireworks");
 
@@ -162,6 +163,7 @@ if (testBtn) {
     triggerNotification();
   });
 }
+
 
 
 
