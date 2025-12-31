@@ -47,12 +47,7 @@ function checkMidnight() {
 
 setInterval(checkMidnight, 1000);
 
-/* ===== TEMP TEST (FOR YOU) ===== */
-// page load pe test karne ke liye:
-setTimeout(() => {
-  if (loveText) loveText.classList.add("love-show");
-  showTeddyKiss();
-}, 2000);
+
 
 
 
