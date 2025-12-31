@@ -152,13 +152,7 @@ document.addEventListener("click", () => {
     Notification.requestPermission();
   }
 });
-document.addEventListener("keydown", (e) => {
-  if (e.key === "T") {
-    if (loveText) loveText.classList.add("love-show");
-    showTeddyKiss();
-    triggerNotification();
-  }
-});
+
 
 
 
