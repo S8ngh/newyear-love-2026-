@@ -114,14 +114,18 @@ function checkMidnight() {
   
   
   ) {
-    if (loveText) {
-      loveText.classList.add("love-show");
-    }
-    triggerNotification();
+  if (loveText) {
+    loveText.classList.add("love-show");
   }
+
+  showTeddyKiss();        // 🧸 YAHI ADD KARO
+
+  triggerNotification();
+}
 }
 
 setInterval(checkMidnight, 1000);
+
 /* ===== NOTIFICATION PERMISSION ===== */
 function triggerNotification() {
   if (!("Notification" in window)) return;
@@ -139,4 +143,5 @@ document.addEventListener("click", () => {
     Notification.requestPermission();
   }
 });
+
 
