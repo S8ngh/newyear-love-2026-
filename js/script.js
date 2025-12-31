@@ -152,6 +152,17 @@ document.addEventListener("click", () => {
     Notification.requestPermission();
   }
 });
+// 🔥 TEMP TEST BUTTON
+const testBtn = document.getElementById("testBtn");
+
+if (testBtn) {
+  testBtn.addEventListener("click", () => {
+    if (loveText) loveText.classList.add("love-show");
+    showTeddyKiss();
+    triggerNotification();
+  });
+}
+
 
 
 
