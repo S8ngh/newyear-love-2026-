@@ -337,39 +337,32 @@ a { text-decoration: none; }
 /* 🧸 Teddy Kiss Animation */
 .teddy-wrap {
   position: fixed;
-  bottom: 90px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
-  height: 120px;
-  pointer-events: none;
-  z-index: 4;
+  display: flex;
+  gap: 120px;
+  z-index: 5;
+  opacity: 0;
 }
 
 .teddy {
-  position: absolute;
-  font-size: 64px;
-  opacity: 0;
+  width: 120px;
+  transition: all 2s ease;
 }
 
-.teddy.left {
-  left: 0;
-  transform: translateX(-40px);
+.teddy-show {
+  opacity: 1;
 }
 
-.teddy.right {
-  right: 0;
-  transform: translateX(40px) scaleX(-1); /* face each other */
+.teddy-show .left {
+  transform: translateX(60px) rotate(10deg);
 }
 
-.kiss {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.3);
-  font-size: 40px;
-  opacity: 0;
+.teddy-show .right {
+  transform: translateX(-60px) rotate(-10deg);
 }
+
 
 /* Active state (trigger) */
 .teddy-show .teddy.left {
@@ -399,5 +392,6 @@ a { text-decoration: none; }
   60% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
+
 
 
