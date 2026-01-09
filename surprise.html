@@ -10,7 +10,16 @@
   <button id="notifyBtn" class="notify-btn">
     Tap here ❤️
   </button>
-  
+  <script>
+  const correctPassword = "akriti2026";  // apna password yahan daalo
+
+  const userPass = prompt("Enter the secret password 💖");
+
+  if (userPass !== correctPassword) {
+    document.body.innerHTML = "<h2 style='text-align:center;margin-top:40vh;'>Wrong password ❌</h2>";
+    throw new Error("Access denied");
+  }
+</script>
 
 
 <audio autoplay loop>
