@@ -29,4 +29,71 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Private 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .box {
+      background: rgba(255,255,255,0.2);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    input {
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      width: 200px;
+      margin-top: 15px;
+      text-align: center;
+    }
+    button {
+      margin-top: 15px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 20px;
+      background: white;
+      color: #ff4f7a;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
 
+<div class="box">
+  <h2>Only for Akriti 💖</h2>
+  <p>Enter the secret password</p>
+  <input type="password" id="pass" placeholder="Password">
+  <br>
+  <button onclick="checkPass()">Enter ❤️</button>
+</div>
+
+<script>
+  function checkPass() {
+    const correctPassword = "akriti2026"; // 👈 password yahan change karo
+    const entered = document.getElementById("pass").value;
+
+    if (entered === correctPassword) {
+      window.location.href = "surprise.html";
+    } else {
+      alert("Wrong password ❌");
+    }
+  }
+</script>
+
+</body>
+</html>
